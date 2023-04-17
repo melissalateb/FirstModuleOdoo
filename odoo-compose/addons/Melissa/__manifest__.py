@@ -8,7 +8,9 @@
     'version': '1.0',
     'depends': ['base'],
     'data': [
-        'hello_world_views.xml',
+        'views/hello_world_views.xml',
+        'views/partner_view.xml',
+        'security/ir.model.access.csv',
     ],
     'images': ['static/src/img/icon.png'],
     'installable': True,

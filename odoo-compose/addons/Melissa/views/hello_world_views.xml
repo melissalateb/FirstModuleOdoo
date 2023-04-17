@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Melissa helloworld form view-->
+        <record id="view_hello_world_form" model="ir.ui.view">
+            <field name="name">helloworld.form</field>
+            <field name="model">helloworld</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                </form>
+            </field>
+        </record>
+        <!--New note Tree View-->
+        <record id="view_hello_world_tree" model="ir.ui.view">
+            <field name="name">helloworld.tree</field>
+            <field name="model">helloworld</field>
+            <field name="arch" type= 'xml'>
+                <tree string="Module hello world">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="date"/>
+                    <field name="mention"/>
+                </tree>
+            </field>   
+        </record>
+        <!--Action-->
+        <record id="action_hello_world" model="ir.actions.act_window">
+            <field name="name">helloworld.action</field>
+            <field name="res_model">helloworld</field>
+            <field name="context">{}</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type ='html'>
+                <p class= "o_view_nocontent_smiling_face">
+                    Add new hello world
+                </p>
+            </field>
+        </record>
+        <!--ajouter un champ Many2one a mon modele helloworld-->
+        <record model="ir.ui.view" id="view_hello_world_form">
+            <field name="name">helloworld.form</field>
+            <field name="model">helloworld</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="date"/>
+                    <field name="mention"/>
+                </form>
+            </field>
+            <!-- <field name="search_view_id" ref="view_hello_world_search"/> -->
+        </record>
+
+        <!--creer un menuitem-->
+        <menuitem
+            id="Melissa_menu"
+            name="Melissa"
+            sequence="10"
+            action = "action_hello_world"/>
+        <menuitem
+            id="Melissa_helloworld_menu"
+            name="helloworld"
+            parent = "Melissa_menu"
+            sequence="10"/>
+        <menuitem
+            id="Melissa_helloworld"
+            name="helloworld"
+            parent = "Melissa_menu"
+            sequence="10"/>
+    </data>
+</odoo>
