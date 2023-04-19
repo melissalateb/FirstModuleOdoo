@@ -1,0 +1,21 @@
+# #Melissa/models/res_partner.py exemple d'un tuto
+# from odoo import api,fields,models
+
+# class Partner(models.Model):
+#     _name = 'res.partner'
+#     _inherit = 'res.partner' #en heritant on herite de ses caracteristique donc on peut construire dessus
+#     _columns ={
+#         'x_nom' : fields.Char('Nom', size=64),
+#         'x_prenom': fields.Char('Prenom', size = 64),
+#     }
+#     _defaults= {
+#         'x_nom' : 'Nom',
+#     }
+    
+#     nom = fields.Char('Nom', required=True, size =128, translate =True)
+#     name =fields.Char(related= 'nom')
+    
+#     type = fields.Selection(selection_add=[('vip', 'VIP')], default='vip')
+    
+
+# Partner()
